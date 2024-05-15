@@ -1,12 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author lenovo
- */
-class Solution {
+public class Solution {
+
+  public int solution(int number) {
+    int sum = 0;
     
+    for (int i = 3; i < number; i++) {
+        if (i % 3 == 0 || i % 5 == 0) {
+            sum += i;
+        }
+    }
+    
+    return sum;
+  }
+
+  public static void main(String[] args) {
+    Solution solution = new Solution();
+    
+    // Meminta pengguna untuk memasukkan angka menggunakan JOption
+    String input = JOptionPane.showInputDialog("Enter a number:");
+    int number = Integer.parseInt(input);
+    
+    // Memanggil metode solution dan menampilkan hasilnya menggunakan JOption
+    int result = solution.solution(number);
+    JOptionPane.showMessageDialog(null, "Sum of multiples of 3 or 5 below " + number + " is: " + result);
+  }
 }
